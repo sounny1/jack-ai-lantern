@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="author" content="@sounny">
-<meta name="contact" content="sounny.github.io">
-<meta name="description" content="An AI-Powered Jack-o'-Lantern generator that carves pumpkins with a sprinkle of magic and a dash of mischief.">
-<meta name="keywords" content="AI, Jack-o'-Lantern, pumpkin, Halloween, spooky, generator, mobile-friendly, shareable">
-<meta name="language" content="en">
-<meta name="generator" content="HTML5, CSS3, JavaScript, Pollinations AI API">
-<meta name="title" content="Jack-AI-Lantern">
+    <meta name="author" content="@sounny">
+    <meta name="contact" content="sounny.github.io">
+    <meta name="description" content="An AI-Powered Chicken Nugget generator that cooks nuggets with a sprinkle of magic and a dash of flavor.">
+    <meta name="keywords" content="AI, Chicken Nugget, generator, mobile-friendly, shareable">
+    <meta name="language" content="en">
+    <meta name="generator" content="HTML5, CSS3, JavaScript, Pollinations AI API">
+    <meta name="title" content="Cluck-AI-Nugget">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jack-AI-Lantern</title>
+    <title>Cluck-AI-Nugget</title>
 
     <!-- Include Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -134,488 +134,112 @@
             background-color: #222325;
             color: #ffffff;
             padding: 1rem;
-            border: 2px solid #ffffff;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 600;
+            border: 2px solid #ffffff
+                    button {
+            width: 100%;
+            background-color: #222325;
+            color: #ffffff;
+            padding: 1rem;
+            border: 2px solid var(--main-color);
+            border-radius: 10px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            margin-top: 1rem;
         }
 
         button:hover {
-            background-color: var(--accent-color);
-        }
-
-        button i {
-            margin-right: 0.5rem;
-        }
-
-        /* Output Section */
-        .output {
-            width: 100%;
-            background-color: var(--container-bg);
-            border-radius: 20px;
-            padding: 1rem;
-            text-align: center;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #message {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: #ffffff;
-            font-weight: 600;
+            background-color: var(--main-color);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 10px rgba(255, 153, 51, 0.5);
         }
 
         #image-container {
             width: 100%;
-            max-width: 400px;
-            height: 400px;
-            margin-bottom: 1rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #2a2a2a;
-            border-radius: 10px;
-            color: #ffffff;
-            font-size: 1.2rem;
+            max-width: 500px;
+            margin: 2rem auto;
+            text-align: center;
         }
 
         #image-container img {
             width: 100%;
-            height: auto;
-            border-radius: 10px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
-        .loader {
-            width: 64px;
-            height: 220px;
-            border: 3px solid var(--main-color);
-            border-radius: 0 0 50px 50px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            box-shadow: 0px 0px var(--main-color) inset;
-            background-image: linear-gradient(var(--main-color) 100%, transparent 0);
-            background-position: 0px 220px;
-            background-size: 64px 220px;
-            background-repeat: no-repeat;
-            animation: animloader98 6s linear infinite;
-            display: none;
-        }
-
-        /* Share Buttons */
-        .share-buttons {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 1rem;
-            width: 100%;
-        }
-
-        .share-button {
-            width: 100%;
-            max-width: 300px;
-            padding: 0.5rem 1rem;
-            background-color: #222325;
+        #image-container span {
+            font-size: 1.5rem;
             color: #ffffff;
-            border: 2px solid #ffffff;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-        }
-
-        .share-button:hover {
-            background-color: var(--accent-color);
-        }
-
-        .share-button i {
-            margin-right: 0.5rem;
-        }
-
-        /* Keyframes for Loader */
-        @keyframes animloader98 {
-            0% {
-                background-position: 0 220px;
-            }
-            100% {
-                background-position: 0 0;
-            }
-        }
-
-        /* Media Queries for Mobile */
-        @media (max-width: 768px) {
-            .generator, .output {
-                width: 90%;
-            }
+            margin-bottom: 1rem;
         }
     </style>
 </head>
-<body>
 
-    <!-- Header Text -->
+<body>
+    <!-- Header Section -->
     <div class="header-container">
-        <h1 class="header-title">Jack-AI-Lantern</h1>
+        <h1 class="header-title">Cluck-AI-Nugget</h1>
+        <p>An AI-Powered Chicken Nugget generator that cooks nuggets with a sprinkle of magic and a dash of flavor.</p>
     </div>
 
     <!-- Main Container -->
     <div class="container">
         <!-- Generator Form -->
         <div class="generator">
-            <!-- Eyes Selection -->
             <div class="input-group">
-                <label for="eyes"><i class="fas fa-eye"></i> Eyes</label>
-                <select id="eyes">
-                    <option value="triangle">Triangle</option>
-                    <option value="round">Round</option>
-                    <option value="slanted">Slanted</option>
-                    <option value="star-shaped">Star-shaped</option>
-                    <option value="crescent">Crescent</option>
-                    <option value="heart-shaped">Heart-shaped</option>
-                    <option value="diamond">Diamond</option>
-                    <option value="spiral">Spiral</option>
+                <label for="nugget-type"><i class="fas fa-hamburger"></i> Nugget Type:</label>
+                <select id="nugget-type">
+                    <option value="chicken">Chicken</option>
+                    <option value="beef">Beef</option>
+                    <option value="veggie">Veggie</option>
                 </select>
             </div>
 
-            <!-- Nose Selection -->
             <div class="input-group">
-                <label for="nose"><i class="fas fa-play" style="transform: rotate(32deg);"></i> Nose</label>
-                <select id="nose">
-                    <option value="triangle">Triangle</option>
-                    <option value="round">Round</option>
-                    <option value="heart-shaped">Heart-shaped</option>
-                    <option value="none">No nose</option>
-                    <option value="square">Square</option>
-                    <option value="star-shaped">Star-shaped</option>
-                    <option value="crescent">Crescent</option>
+                <label for="sauce"><i class="fas fa-bottle"></i> Sauce:</label>
+                <select id="sauce">
+                    <option value="bbq">BBQ</option>
+                    <option value="ranch">Ranch</option>
+                    <option value="honey-mustard">Honey Mustard</option>
                 </select>
             </div>
 
-            <!-- Mouth Selection -->
             <div class="input-group">
-                <label for="mouth"><i class="fas fa-smile"></i> Mouth</label>
-                <select id="mouth">
-                    <option value="grin">Grin</option>
-                    <option value="frown">Frown</option>
-                    <option value="square">Square</option>
-                    <option value="jagged">Jagged</option>
-                    <option value="curved">Curved</option>
-                    <option value="stitched">Stitched</option>
-                    <option value="fanged">Fanged</option>
-                    <option value="surprised">Surprised</option>
-                    <option value="smirk">Smirk</option>
+                <label for="toppings"><i class="fas fa-seedling"></i> Toppings:</label>
+                <select id="toppings">
+                    <option value="cheese">Cheese</option>
+                    <option value="lettuce">Lettuce</option>
+                    <option value="tomato">Tomato</option>
                 </select>
             </div>
 
-            <!-- Accessories Selection -->
-            <div class="input-group">
-                <label for="accessories"><i class="fas fa-hat-wizard"></i> Accessories</label>
-                <select id="accessories">
-                    <option value="none">None</option>
-                    <option value="witch hat">Witch Hat</option>
-                    <option value="scarf">Scarf</option>
-                    <option value="glasses">Glasses</option>
-                    <option value="sunglasses">Sunglasses</option>
-                    <option value="beanie">Beanie</option>
-                    <option value="bow tie">Bow Tie</option>
-                    <option value="earrings">Earrings</option>
-                    <option value="mustache">Mustache</option>
-                    <option value="pipe">Pipe</option>
-                    <option value="monocle">Monocle</option>
-                    <option value="crown">Crown</option>
-                    <option value="glasses and scarf">Glasses and Scarf</option>
-                    <option value="beanie and scarf">Beanie and Scarf</option>
-                    <option value="witch hat and glasses">Witch Hat and Glasses</option>
-                    <option value="sunglasses and bow tie">Sunglasses and Bow Tie</option>
-                    <option value="sunglasses and scarf">Sunglasses and Scarf</option>
-                    <option value="sunglasses and beanie">Sunglasses and Beanie</option>
-                </select>
-            </div>
-
-            <!-- Background Selection -->
-            <div class="input-group">
-                <label for="background"><i class="fas fa-tree"></i> Background</label>
-                <select id="background">
-                    <option value="spooky forest">Spooky Forest</option>
-                    <option value="haunted house">Haunted House</option>
-                    <option value="graveyard">Graveyard</option>
-                    <option value="misty night">Misty Night</option>
-                    <option value="full moon">Full Moon</option>
-                    <option value="pumpkin patch">Pumpkin Patch</option>
-                    <option value="witch's cauldron">Witch's Cauldron</option>
-                    <option value="abandoned castle">Abandoned Castle</option>
-                </select>
-            </div>
-
-            <!-- Art Style Selection -->
-            <div class="input-group">
-                <label for="style"><i class="fas fa-palette"></i> Art Style</label>
-                <select id="style">
-                    <option value="realistic">Realistic</option>
-                    <option value="cartoon">Cartoon</option>
-                    <option value="watercolor">Watercolor</option>
-                    <option value="oil painting">Oil Painting</option>
-                    <option value="digital art">Digital Art</option>
-                    <option value="sketchy">Sketchy</option>
-                    <option value="pixel art">Pixel Art</option>
-                    <option value="gothic">Gothic</option>
-                    <option value="pop art">Pop Art</option>
-                    <option value="abstract">Abstract</option>
-                    <option value="line drawing">Line Drawing</option>
-                    <option value="comic book">Comic Book</option>
-                </select>
-            </div>
-
-            <!-- Generate Button -->
-            <button id="generate">
-                <i class="fas fa-magic"></i> Conjure Your Jack-o'-Lantern
-            </button>
+            <button id="generate"><i class="fas fa-fork"></i> Cook Your Nugget</button>
         </div>
 
-        <!-- Output Section -->
-        <div class="output">
-            <div id="message">Your creation will appear below.</div>
-            <div id="loading-spinner" class="loader"></div>
-            <div id="image-container">
-                <!-- Placeholder Text -->
-                <span>Awaiting your magical creation...</span>
-            </div>
-            <div id="utilities">
-                <a id="dlLink" href="#" target="_blank" style="display: none;">
-                    <i class="fas fa-ghost"></i> Unleash Your Creation
-                </a>
-            </div>
-
-            <!-- Share Buttons -->
-            <div class="share-buttons" id="share-buttons" style="display: none;">
-                <a href="#" class="share-button" id="twitter-share" target="_blank">
-                    <i class="fab fa-twitter"></i> Share on Twitter
-                </a>
-                <a href="#" class="share-button" id="facebook-share" target="_blank">
-                    <i class="fab fa-facebook"></i> Share on Facebook
-                </a>
-            </div>
+        <!-- Image Container -->
+        <div id="image-container">
+            <span>Awaiting your tasty creation...</span>
         </div>
     </div>
 
-    <!-- JavaScript Code -->
     <script>
-        // Wait for the DOM to fully load
-        document.addEventListener("DOMContentLoaded", function () {
-            // Get references to DOM elements
-            const generateButton = document.getElementById("generate");
-            const eyesInput = document.getElementById("eyes");
-            const noseInput = document.getElementById("nose");
-            const mouthInput = document.getElementById("mouth");
-            const accessoriesInput = document.getElementById("accessories");
-            const backgroundInput = document.getElementById("background");
-            const styleInput = document.getElementById("style");
-            const imageContainer = document.getElementById("image-container");
-            const loadingSpinner = document.getElementById("loading-spinner");
-            const dlLink = document.getElementById("dlLink");
-            const message = document.getElementById("message");
-            const shareButtons = document.getElementById("share-buttons");
-            const twitterShare = document.getElementById("twitter-share");
-            const facebookShare = document.getElementById("facebook-share");
+        // Get elements
+        const generateButton = document.getElementById('generate');
+        const nuggetTypeSelect = document.getElementById('nugget-type');
+        const sauceSelect = document.getElementById('sauce');
+        const toppingsSelect = document.getElementById('toppings');
+        const imageContainer = document.getElementById('image-container');
 
-            // Hide download link and share buttons initially
-            dlLink.style.display = "none";
-            shareButtons.style.display = "none";
+        // Add event listener to generate button
+        generateButton.addEventListener('click', () => {
+            // Get selected values
+            const nuggetType = nuggetTypeSelect.value;
+            const sauce = sauceSelect.value;
+            const toppings = toppingsSelect.value;
 
-            // Event listener for the Generate button
-            generateButton.addEventListener("click", function () {
-                const description = encodeURIComponent(createDescription());
-                const imageUrl = `https://image.pollinations.ai/prompt/${description}?nologo=1&seed=${generateRandomSeed()}&height=512&width=512`;
-                displayLoadingState(true);
+            // Generate image URL (replace with your API or image generation logic)
+            const imageUrl = `https://example.com/nugget-image/${nuggetType}/${sauce}/${toppings}`;
 
-                // Use a CORS proxy
-                const proxyUrl = "https://corsproxy.io/?";
-                const proxiedImageUrl = proxyUrl + encodeURIComponent(imageUrl);
-
-                fetch(proxiedImageUrl)
-                    .then((response) => response.blob())
-                    .then((blob) => {
-                        const img = new Image();
-                        img.onload = function () {
-                            displayGeneratedImage(this);
-                            updateDownloadLink(imageUrl); // Use original URL for download
-                            message.textContent = "Your Jack-o'-Lantern has been generated!";
-                            displayLoadingState(false);
-                            updateShareLinks(imageUrl);
-                        };
-                        img.onerror = function () {
-                            throw new Error("Image failed to load");
-                        };
-                        img.src = URL.createObjectURL(blob);
-                    })
-                    .catch((error) => {
-                        displayLoadingState(false);
-                        message.textContent = "Failed to generate the image. Please try again.";
-                        console.error("Error:", error);
-                    });
-            });
-
-            // Function to create the description for the AI image generator
-            function createDescription() {
-                return `Detailed Halloween pumpkin Jack-o'-Lantern, ${getEyesDescription(
-                    eyesInput.value
-                )}, ${getNoseDescription(noseInput.value)}, ${getMouthDescription(mouthInput.value)}, ${getAccessoriesDescription(accessoriesInput.value)} in a ${getBackgroundDescription(backgroundInput.value)}, ${getStyleDescription(styleInput.value)} style, spooky, highly detailed`;
-            }
-
-            // Function to generate a random seed for the image generator
-            function generateRandomSeed() {
-                return Math.floor(Math.random() * 1e9);
-            }
-
-            // Function to display or hide the loading state
-            function displayLoadingState(isLoading) {
-                loadingSpinner.style.display = isLoading ? "block" : "none";
-                generateButton.disabled = isLoading;
-                if (isLoading) {
-                    imageContainer.innerHTML = "";
-                    dlLink.style.display = "none";
-                    shareButtons.style.display = "none";
-                    message.textContent = "Conjuring your Jack-o'-Lantern...";
-                }
-            }
-
-            // Function to display the generated image
-            function displayGeneratedImage(img) {
-                imageContainer.innerHTML = "";
-                imageContainer.appendChild(img);
-            }
-
-            // Function to update the download link
-            function updateDownloadLink(imageUrl) {
-                dlLink.style.display = "inline-block";
-                dlLink.href = imageUrl;
-            }
-
-            // Function to update the share links
-            function updateShareLinks(imageUrl) {
-                shareButtons.style.display = "flex";
-                const shareText = encodeURIComponent("Check out my Jack-o'-Lantern from AI Jack-o'-Magic! 🎃");
-                const shareUrl = encodeURIComponent("https://sounny.github.io/jack-ai-lantern/");
-                twitterShare.href = `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}&hashtags=AIJackoMagic`;
-                facebookShare.href = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
-            }
-
-            // Helper functions to get descriptions based on user selections
-            function getEyesDescription(eyesType) {
-                const descriptions = {
-                    triangle: "triangular-shaped glowing eyes",
-                    round: "round glowing eyes",
-                    slanted: "slanted menacing eyes",
-                    "star-shaped": "star-shaped glowing eyes",
-                    crescent: "crescent-shaped glowing eyes",
-                    "heart-shaped": "heart-shaped glowing eyes",
-                    diamond: "diamond-shaped glowing eyes",
-                    spiral: "spiral-shaped glowing eyes"
-                };
-                return descriptions[eyesType] || "glowing eyes";
-            }
-
-            function getNoseDescription(noseType) {
-                const descriptions = {
-                    triangle: "triangular-shaped nose",
-                    round: "round nose",
-                    "heart-shaped": "heart-shaped nose",
-                    none: "no nose",
-                    square: "square-shaped nose",
-                    "star-shaped": "star-shaped nose",
-                    crescent: "crescent-shaped nose"
-                };
-                return descriptions[noseType] || "carved nose";
-            }
-
-            function getMouthDescription(mouthType) {
-                const descriptions = {
-                    grin: "wide grinning mouth with teeth",
-                    frown: "frowning mouth",
-                    square: "square-shaped mouth",
-                    jagged: "jagged, zigzag mouth",
-                    curved: "curved smiling mouth",
-                    stitched: "stitched mouth",
-                    fanged: "fanged grinning mouth",
-                    surprised: "surprised O-shaped mouth",
-                    smirk: "a mischievous smirk or smile"
-                };
-                return descriptions[mouthType] || "carved mouth";
-            }
-
-            function getAccessoriesDescription(accessoryType) {
-                const descriptions = {
-                    none: "",
-                    "witch hat": "wearing a witch hat",
-                    scarf: "wearing a cozy scarf",
-                    glasses: "wearing glasses",
-                    sunglasses: "wearing cool sunglasses",
-                    beanie: "wearing a warm beanie",
-                    "bow tie": "wearing a dapper bow tie",
-                    earrings: "with dangling earrings",
-                    mustache: "with a curly mustache",
-                    pipe: "with a smoking pipe",
-                    monocle: "wearing a monocle",
-                    crown: "wearing a regal crown",
-                    "glasses and scarf": "wearing glasses and a cozy scarf",
-                    "beanie and scarf": "wearing a warm beanie and a cozy scarf",
-                    "witch hat and glasses": "wearing a witch hat and glasses",
-                    "sunglasses and bow tie": "wearing cool sunglasses and a dapper bow tie",
-                    "sunglasses and scarf": "wearing cool sunglasses and a cozy scarf",
-                    "sunglasses and beanie": "wearing cool sunglasses and a warm beanie"
-                };
-                return descriptions[accessoryType] || "";
-            }
-
-            function getBackgroundDescription(backgroundType) {
-                const descriptions = {
-                    "spooky forest": "spooky forest with twisted trees and fog",
-                    "haunted house": "haunted house with eerie windows and a full moon",
-                    graveyard: "misty graveyard with crooked tombstones",
-                    "misty night": "misty night scene with a full moon",
-                    "full moon": "dramatic full moon night sky",
-                    "pumpkin patch": "pumpkin patch with various sized pumpkins",
-                    "witch's cauldron": "bubbling witch's cauldron with green smoke",
-                    "abandoned castle": "looming abandoned castle on a hilltop"
-                };
-                return descriptions[backgroundType] || "spooky Halloween scene";
-            }
-
-            function getStyleDescription(styleType) {
-                const descriptions = {
-                    realistic: "realistic style",
-                    cartoon: "cartoon style",
-                    watercolor: "watercolor painting style",
-                    "oil painting": "oil painting style",
-                    "digital art": "digital art style",
-                    sketchy: "sketchy, hand-drawn style",
-                    "pixel art": "pixel art style",
-                    gothic: "dark, gothic style",
-                    "pop art": "bold, pop art style",
-                    abstract: "abstract art style",
-                    "line drawing": "minimalist line drawing style",
-                    "comic book": "comic book style"
-                };
-                return descriptions[styleType] || "artistic style";
-            }
+            // Update image container
+            imageContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Nugget Image">`;
         });
     </script>
-
 </body>
 </html>
