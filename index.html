@@ -221,25 +221,31 @@
 
     <script>
         // Get elements
-        const generateButton = document.getElementById('generate');
-        const nuggetTypeSelect = document.getElementById('nugget-type');
-        const sauceSelect = document.getElementById('sauce');
-        const toppingsSelect = document.getElementById('toppings');
-        const imageContainer = document.getElementById('image-container');
+const generateButton = document.getElementById('generate');
+const nuggetTypeSelect = document.getElementById('nugget-type');
+const sauceSelect = document.getElementById('sauce');
+const toppingsSelect = document.getElementById('toppings');
+const imageContainer = document.getElementById('image-container');
 
-        // Add event listener to generate button
-        generateButton.addEventListener('click', () => {
-            // Get selected values
-            const nuggetType = nuggetTypeSelect.value;
-            const sauce = sauceSelect.value;
-            const toppings = toppingsSelect.value;
+// Add event listener to generate button
+generateButton.addEventListener('click', () => {
+  // Get selected values
+  const nuggetType = nuggetTypeSelect.value;
+  const sauce = sauceSelect.value;
+  const toppings = toppingsSelect.value;
 
-            // Generate image URL (replace with your API or image generation logic)
-            const imageUrl = `https://example.com/nugget-image/${nuggetType}/${sauce}/${toppings}`;
+  // Construct prompt
+  const prompt = `Detailed ${nuggetType} chicken nugget, ${sauce} sauce, ${toppings}, in a plate, realistic style, highly detailed`;
 
-            // Update image container
-            imageContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Nugget Image">`;
-        });
+  // Encode prompt
+  const encodedPrompt = encodeURIComponent(prompt);
+
+  // Construct URL
+  const imageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?nologo=1&seed=83599516&height=512&width=512`;
+
+  // Update image container
+  imageContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Nugget Image">`;
+});
     </script>
 </body>
 </html>
